@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+import GitStalker.views as views
+
 urlpatterns = [
-    path('model/', include('Model.urls')),
+    # path('model/', include('Model.urls')),
+    path('', views.index_view),
+    path('index/', views.index_view),
     path('admin/', admin.site.urls),
 ]
