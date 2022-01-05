@@ -10,4 +10,5 @@ class MyAppConfig(AppConfig):
         print("READY IS RUNNING")
         print("Probably want to put code here to populate database")
 
-        p.parse_database()
+        # temporarily commented to make development easier
+        # p.parse_database()

@@ -18,9 +18,15 @@ from django.urls import path, include
 
 import GitStalker.views as views
 
+# urlpatters requires certain urls to be defined twice, for when they do and when
+# they don't have arguments.  I think this is worth it for slightly cleaner code
+
 urlpatterns = [
-    # path('model/', include('Model.urls')),
-    path('', views.index_view),
-    path('index/', views.index_view),
+    path('', views.home_page),
+    path('index/', views.home_page),
+    path('getWmName/<str:wm_name>/', views.getWmView, name='getWmName'),
+    path('getWmName/', views.getWmView, name='getWmName'),
+    path('getUserView/<str:usr_email>/',views.getUserView, name='getUserView'),
+    path('getUserView/',views.getUserView, name='getUserView'),
     path('admin/', admin.site.urls),
 ]
