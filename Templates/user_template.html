@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <style>
+      #header{
+	  background-color: #0767af;
+	  color: white;
+	  padding: 1em;
+	  padding-left: 1.5em;
+	  margin: -0.5em; /*Not sure about this*/
+	  min-height: 5em;
+      }
+
+      .gs_text{
+	  background-color: #0767af;
+	  color: white;
+	  border-color: #0767af;
+	  padding: 1em;
+	  margin: 1em;
+	  font-weight: bold;
+	  max-width: 10em;
+	  display: flex;
+	  justify-content: center;
+      }
+
+      .scroll_box{
+	  height: 80%;
+	  overflow: scroll;
+	  border-bottom: 1px solid lightgrey;
+      }
+
+      .commits{
+	  background-color: lightgrey;
+	  color: black;
+	  margin: 1em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id='header'>
+      <h1 style='display: inline;'>{{ user.authorname }}</h1>
+      <h2>{{ user.authoremail }}</h2>
+    </div>
+
+    <div>
+      <h3 style='margin: 1em;'>Projects:</h3>
+      {% for project in projects %}
+      
+      <!-- 
+	   project.reponame points to an object located in the Repo table,
+	   thus the double use of reponame
+	-->
+      <p class='gs_text'>{{ project.reponame.reponame }}</p>
+
+      {% endfor %}
+      
+    </div>
+
+    <div class='scroll_box'>
+      {% for commit in commits %}
+      <table class='commits'>
+	<tr>
+	  <td>
+	    {{ commit.commithash }}
+	  </td>
+	  <td>
+	    {{ commit.parenthash }}
+	  </td>
+	  <td>
+	    {{ commit.datetime }}
+	  </td>
+	  <td>
+	    {{ commit.subject }}
+	  </td>
+	  <td>
+	    {{ commit.body }}
+	  </td>
+	</tr>
+      </table>
+      {% endfor %}
+    </div>
+
+  </body>
+</html>

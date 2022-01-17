@@ -26,7 +26,7 @@ urlpatterns = [
     path('index/', views.home_page),
     path('getWmName/<str:wm_name>/', views.getWmView, name='getWmName'),
     path('getWmName/', views.getWmView, name='getWmName'),
-    path('getUserView/<str:usr_email>/',views.getUserView, name='getUserView'),
+    path('getUserView/<str:usr_name>/',views.getUserView, name='getUserView'),
     path('getUserView/',views.getUserView, name='getUserView'),
     path('admin/', admin.site.urls),
 ]
