@@ -23,6 +23,13 @@ virtualenv .env && source .env/bin/activate && pip install -r requirements.txt
 [source](https://stackoverflow.com/a/12657803)
 
 
+To run:
+```
+python manage.py runserver --noreload
+```
+
+
+
 ## Motivation
 
 I have been using window managers for nearly as long as I’ve been using Linux (just about 5 years now), and have recently renewed my interest in them.  I’ve been looking into either updating my current one or switching to a new one and I know most (if not all) of them are FOSS projects, and some of them influence each other.	
