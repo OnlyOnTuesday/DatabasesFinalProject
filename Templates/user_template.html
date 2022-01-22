@@ -33,6 +33,25 @@
 	  color: black;
 	  margin: 1em;
       }
+
+      table {
+	  border-collapse: collapse;
+	  table-layout: fixed;
+      }
+
+      tbody tr:nth-child(odd){
+	  background-color: rgba(7, 103, 175, 0.5);
+      }
+
+      table td {
+	  text-align: center;
+      }
+
+      
+      /* tbody tr:nth-child(even){ */
+      /* 	  background-color: white; */
+      /* } */
+
     </style>
   </head>
   <body>
@@ -57,27 +76,37 @@
     </div>
 
     <div class='scroll_box'>
-      {% for commit in commits %}
       <table class='commits'>
-	<tr>
-	  <td>
-	    {{ commit.commithash }}
-	  </td>
-	  <td>
-	    {{ commit.parenthash }}
-	  </td>
-	  <td>
-	    {{ commit.datetime }}
-	  </td>
-	  <td>
-	    {{ commit.subject }}
-	  </td>
-	  <td>
-	    {{ commit.body }}
-	  </td>
-	</tr>
+	<thead>
+	  <th>Commit Hash</th>
+	  <th>Parent Hash</th>
+	  <th>Date and Time</th>
+	  <th>Commit Subject</th>
+	  <th>Commit Body</th>
+	</thead>
+	<tbody>
+	  {% for commit in commits %}
+	  
+	  <tr>
+	    <td>
+	      {{ commit.commithash }}
+	    </td>
+	    <td>
+	      {{ commit.parenthash }}
+	    </td>
+	    <td>
+	      {{ commit.datetime }}
+	    </td>
+	    <td>
+	      {{ commit.subject }}
+	    </td>
+	    <td>
+	      {{ commit.body }}
+	    </td>
+	  </tr>
+	  {% endfor %}
+	</tbody>
       </table>
-      {% endfor %}
     </div>
 
   </body>

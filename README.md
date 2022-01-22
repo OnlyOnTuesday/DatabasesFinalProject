@@ -62,20 +62,20 @@ Specifically, I plan to gather the commit and parent hashes for each commit in t
   - [x] Determine where pieces of information are stored in git objects
   - [x] Write (or find) scripts to parse git history
   - [x] Automate parsing of data and storing it in DB
-- [ ] Week 2: Set up UI and be able to capture user input and display some basic information.
+- [x] Week 2: Set up UI and be able to capture user input and display some basic information.
   - [x] Find a Python framework for GUIs
-  - [ ] Set up a basic working gui
-    - [ ] Display text
-    - [ ] Output text
-    - [ ] Take user input
-- [ ] Week 3: Write sql queries and display them on UI
+  - [x] Set up a basic working gui
+    - [x] Display text
+    - [x] Output text
+    - [x] Take user input
+- [x] Week 3: Write sql queries and display them on UI
   - [ ] Display commit history of individual project
     - [ ] Visualize commit histories as a graph
     - [ ] Display info in table
-  - [ ] Display commit history of individual user (across all projects)
-    - [ ] Display info in table
+  - [x] Display commit history of individual user (across all projects)
+    - [x] Display info in table
   - [ ] Search for commits by commit message (user input)
-  - [ ] Display who works on what projects (or, what users a project has)
-- [ ] Week 4: Catch up on late work and add finishing touches to project
+  - [x] Display who works on what projects (or, what users a project has)
+- [x] Week 4: Catch up on late work and add finishing touches to project
   - [ ] I assume I’ll be behind and will use this time to catch up
-  - [ ] I also doubt my gui will look very good, so I’ll take this time to make it prettier
+  - [x] I also doubt my gui will look very good, so I’ll take this time to make it prettier

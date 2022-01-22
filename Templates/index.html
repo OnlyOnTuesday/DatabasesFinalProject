@@ -1,7 +1,5 @@
 <html>
   <head>
-    <!--<link rel="stylesheet" type="text/css"
-	      href="Templates/git_stalker.css">-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
 
@@ -26,15 +24,6 @@
 
     </style>
 
-    <!-- <script> -->
-    <!--   function getNewView(e) { -->
-    <!-- 	  console.log(e.innerText); -->
-    <!-- 	  fetch('../admin/', { -->
-    <!-- 	      method: 'GET', -->
-    <!-- 	  }).then(console.log('hello')); -->
-    <!--   } -->
-    <!-- </script> -->
-
   </head>
   <body>
 
@@ -43,32 +32,38 @@
       <b>Git Stalker</b>
       <br>
     </h1>
-
-    <div>
-      
-      <div style='width:50%; float: left; '>
-	{% for wm in wm_list %}
-	<br>
-	<button class='gs_button'
-		onclick='location.href="{% url 'getWmName'%}{{wm.reponame}}"'>
-	  {{ wm.wm_name }}
-	</button> 
-	{% endfor %}
-      </div>
-      
-      <div class='scroll_box'  style='width:50%; float: right;' >
-	{% for user in user_list %}
-	<br> 
-	<button class='gs_button'
-		onclick='location.href="{% url 'getUserView'%}{{user.authorname}}"'>
-	  {{ user.authoremail }}<br>({{user.authorname }} )
-	</button>
-	{% endfor %}
-      </div>
-      
+    
+    <br>
+    
+    <div style='display: flex; justify-content: right; margin-right: 9.5em;'>
+      <form action=''>
+	<input type='text' name='search' placeholder='Search for a user'
+	       value='{{request.GET.title}}'> 
+	<input type='submit' value='search'>
+	<input type='submit' value='clear'>
+      </form>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <br><br> -->
+    <div style='width:50%; float: left;'>
+      {% for wm in wm_list %}
+      <br>
+      <button class='gs_button'
+	      onclick='location.href="{% url 'getWmName'%}{{wm.reponame}}"'>
+	{{ wm.wm_name }}
+      </button> 
+      {% endfor %}
+    </div>
+    
+    <div class='scroll_box'  style='width:50%; float: right;'>
+      {% for user in user_list %}
+      <br> 
+      <button class='gs_button'
+	      onclick='location.href="{% url 'getUserView'%}{{user.authorname}}"'>
+	{{ user.authoremail }}<br>({{user.authorname }} )
+      </button>
+      {% endfor %}
+    </div>
 
   </body>
 </html>
